@@ -1,0 +1,31 @@
+// Functions
+@import "@scss-modules/functions";
+
+// Templates
+
+%container {
+  max-width: 1460px;
+  margin: 0 auto;
+  padding: 0 10px;
+  box-sizing: content-box;
+}
+
+%wrapper {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+%ibg {
+  position: relative;
+
+  img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
