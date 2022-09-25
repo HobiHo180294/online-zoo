@@ -15,10 +15,13 @@
 @import "@scss-modules/templates";
 
 // Mixins
-@import "@scss-modules/_mixins.scss";
+@import "@scss-modules/mixins";
 
 // Functions
-@import "@scss-modules/_functions.scss";
+@import "@scss-modules/functions";
+
+// Buttons
+@import "@scss-modules/buttons";
 
 /* Presets and common styles start*/
 html,
@@ -94,7 +97,7 @@ body {
     transition: all 0.5s ease 0s;
 
     &:hover {
-      color: #fc8b23;
+      color: $Light_orange;
     }
   }
 }
@@ -155,7 +158,7 @@ body {
       transition: all 0.5s ease 0s;
 
       &:hover {
-        color: #fc8b23;
+        color: $Light_orange;
       }
     }
   }
@@ -167,6 +170,62 @@ body {
 .page {
   flex: 1 1 auto;
 }
+
+// Watch your favourite animal online styles start
+.intro {
+  background: url("../../assets/images/css-backgrounds/main/Giant-Panda_cut.png")
+    no-repeat center / cover;
+  min-height: 700px;
+  position: relative;
+
+  &__container {
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 12px;
+      left: 600px;
+      width: 465px;
+      height: 465px;
+      background: linear-gradient(113.96deg, #f9804b 1.49%, #fe9013 101.44%);
+      border-radius: 50%;
+    }
+  }
+
+  &__body {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: auto;
+    max-width: 500px;
+    padding-top: 86px;
+    z-index: 1;
+  }
+
+  &__title {
+    margin-bottom: 60px;
+  }
+}
+
+.title {
+  margin-top: 0;
+  font-family: "Roboto";
+  font-weight: 700;
+  font-size: 106.496px;
+  line-height: 75%;
+  text-transform: uppercase;
+  color: $White;
+  text-align: center;
+
+  &__mark {
+    background: none;
+    color: $Yellow;
+  }
+}
+// Watch your favourite animal online styles end
+
 /* Page styles end */
 
 /* Footer styles start */

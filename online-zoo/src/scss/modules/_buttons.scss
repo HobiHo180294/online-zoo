@@ -1,0 +1,48 @@
+/* each loop */
+
+// Functions
+@import "@scss-modules/functions";
+
+// Palette
+@import "@scss-modules/palette";
+
+// Styles for buttons
+$btnList: "gradientBtn", "orangeBtn", "squareBtn";
+
+@each $btnName in $btnList {
+  .#{$btnName} {
+    display: inline-block;
+    padding: 16px 97px;
+    font-family: "Roboto", sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 140%;
+    text-align: center;
+    text-transform: uppercase;
+    color: $White;
+    transition: all 0.5s ease 0s;
+
+    @if $btnName == "gradientBtn" or $btnName == "squareBtn" {
+      background: linear-gradient(
+        113.96deg,
+        $Orang 1.49%,
+        $Light_orange 101.44%
+      );
+    } @else {
+      background-color: $Light_orange;
+    }
+
+    @if $btnName == "squareBtn" {
+      border-radius: 5px;
+    } @else {
+      border-radius: 25px;
+    }
+
+    &:hover,
+    &:active {
+      color: $Light_orange;
+      background: none;
+      background-color: $White;
+    }
+  }
+}

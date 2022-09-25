@@ -4,16 +4,17 @@
 // Templates
 
 %l-container {
-  max-width: 1460px;
-  margin: 0 auto;
-  padding: 0 10px;
   box-sizing: content-box;
+  margin: 0 auto;
+  max-width: 1460px;
+  padding: 0 10px;
 }
 
 %m-container {
-  max-width: 1380px;
-  margin: 0 auto;
   box-sizing: content-box;
+  margin: 0 auto;
+  max-width: 1161px;
+  padding: 0 10px;
 }
 
 %wrapper {
