@@ -163,12 +163,19 @@ body {
     }
   }
 }
-
 /* Header styles end */
 
 /* Page styles start */
 .page {
   flex: 1 1 auto;
+
+  &__the-backstage {
+    padding: 140px 0 90px;
+  }
+
+  &__pets {
+    padding: 90px 0 100px;
+  }
 }
 
 // Watch your favourite animal online styles start
@@ -225,6 +232,226 @@ body {
   }
 }
 // Watch your favourite animal online styles end
+
+//  The Backstage styles start
+.backstage {
+  position: relative;
+
+  &::before {
+    content: url("../../assets/images/main/decorations/flower_foto.png");
+    position: absolute;
+    top: 10px;
+    right: 0;
+  }
+
+  &__body {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  &__img {
+    margin-right: 20px;
+  }
+}
+
+.column-backstage {
+  max-width: 465px;
+}
+
+.top-column-backstage {
+  margin-bottom: 54px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  color: $Black_blue;
+
+  &__title {
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 48px;
+    font-weight: inherit;
+    line-height: 120%;
+
+    &_text {
+      font-size: 16px;
+      line-height: 130%;
+      margin: 0;
+    }
+  }
+}
+
+.bottom-column-backstage {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  color: $Black_blue;
+
+  &__subtitle {
+    margin-top: 0;
+    margin-bottom: 34px;
+    font-weight: inherit;
+    font-size: 24px;
+    line-height: 120%;
+  }
+
+  &__explain {
+    margin: 0;
+    font-size: 16px;
+    line-height: 140%;
+  }
+}
+//  The Backstage styles end
+
+// Pets styles start
+.pets {
+  position: relative;
+
+  &::before {
+    content: url("../../assets/images/main/decorations/palm_foto.png");
+    position: absolute;
+    bottom: 0;
+    left: 0;
+  }
+
+  &::after {
+    content: url("../../assets/images/main/decorations/strelitzia.png");
+    position: absolute;
+    bottom: 0;
+    right: 0;
+  }
+
+  &__container {
+    text-align: center;
+  }
+
+  &__slider {
+    position: relative;
+    margin-bottom: 80px;
+  }
+
+  &__cards {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    column-gap: 30px;
+    row-gap: 20px;
+    padding: 0;
+  }
+}
+
+.card-pets {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  grid-column: span 2;
+
+  &__img {
+    max-height: 366px;
+    overflow: hidden;
+    border-top: 2px solid $Light_orange;
+    border-left: 2px solid $Light_orange;
+    border-right: 2px solid $Light_orange;
+    border-radius: 5px 5px 0 0;
+
+    &_pic {
+      transition: all 0.8s ease 0s;
+
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+  }
+}
+
+.desc-pets {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 8px 10px 16px;
+  text-align: left;
+  overflow: hidden;
+  background-color: $Light_gray;
+  border-bottom: 2px solid $Light_orange;
+  border-left: 2px solid $Light_orange;
+  border-right: 2px solid $Light_orange;
+  border-radius: 0 0 5px 5px;
+  transform: translateY(-120%);
+  opacity: 0;
+  transition: all 0.8s ease 0s;
+
+  &._active {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+
+  &__text {
+    font-family: "Roboto", sans-serif;
+    color: $Black;
+  }
+
+  &__title {
+    margin: 0;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 140%;
+    text-transform: uppercase;
+  }
+
+  &__environment {
+    margin: 0;
+    font-weight: 300;
+    font-size: 15px;
+    line-height: 120%;
+  }
+}
+
+.slide-arrow {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 62px;
+  height: 62px;
+  background-image: linear-gradient(
+    113.96deg,
+    $Orang 1.49%,
+    $Light_orange 101.44%
+  );
+  border-radius: 50%;
+  z-index: 1;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-image: linear-gradient(0deg, $Green 100%, $Green 100%);
+    z-index: -1;
+    border-radius: 50%;
+    transition: opacity 0.3s linear;
+    opacity: 0;
+  }
+
+  &:hover::before {
+    cursor: pointer;
+    opacity: 1;
+  }
+}
+
+.arrows-wrapper {
+  position: absolute;
+  width: 1322px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.arrows-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  // margin: 0 70px;
+}
+// Pets styles end
 
 /* Page styles end */
 
