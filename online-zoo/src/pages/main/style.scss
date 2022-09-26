@@ -180,6 +180,10 @@ body {
   &__pick-and-feed-a-friend {
     padding: 69px 0 100px;
   }
+
+  &__testimonials {
+    padding: 140px 0 180px;
+  }
 }
 
 // Watch your favourite animal online styles start
@@ -348,6 +352,8 @@ body {
   grid-column: span 2;
 
   &__img {
+    position: relative;
+    z-index: 1;
     max-height: 366px;
     overflow: hidden;
     border-top: 2px solid $Light_orange;
@@ -381,6 +387,7 @@ body {
   transform: translateY(-120%);
   opacity: 0;
   transition: all 0.8s ease 0s;
+  z-index: 0;
 
   &._active {
     opacity: 1;
@@ -639,6 +646,173 @@ body {
   }
 }
 // Pick and feed a friend styles end
+
+// Testimonials styles start
+.testimonials {
+  position: relative;
+
+  &::before {
+    content: url("../../assets/images/main/decorations/leav_foto.png");
+    bottom: -20px;
+    right: -55px;
+    position: absolute;
+    width: 300.92px;
+    height: 295.45px;
+  }
+
+  &__body {
+    > * {
+      &:first-child {
+        text-align: center;
+      }
+    }
+  }
+
+  &__title {
+    margin-top: 0;
+    margin-bottom: 45px;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 130%;
+    color: $Black_blue;
+  }
+
+  &__examples {
+    text-align: left;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 21px;
+  }
+
+  &__progress {
+    width: 599px;
+    height: 8px;
+    border-radius: 5px;
+  }
+
+  &__progress-bg {
+    position: relative;
+    width: 599px;
+    height: 8px;
+    box-sizing: border-box;
+    border: 0.5px solid transparent;
+    background-color: #f5f7f6;
+    border-radius: 5px;
+    margin: 0 auto 31px;
+    background-clip: padding-box;
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: -0.5px;
+      bottom: -0.5px;
+      left: -0.5px;
+      right: -0.5px;
+      background: linear-gradient(
+          190deg,
+          #febdabbd,
+          #f3a9f8a8,
+          #e0d8f0,
+          #eaf7fe,
+          #eaf7fe
+        ),
+        linear-gradient(
+          -130deg,
+          #febdabbd,
+          #f3a9f8a8,
+          #e0d8f0,
+          #eaf7fe,
+          #eaf7fe
+        );
+      z-index: -1;
+      border-radius: 5px;
+    }
+  }
+
+  &__progress-line {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 19.2%;
+    background-color: #fe9013;
+    border-radius: 5px;
+  }
+}
+
+.examples-testimonials {
+  &__column {
+    flex: 0 1 268px;
+  }
+}
+
+.item-testimonial {
+  position: relative;
+  border: 2px solid transparent;
+  border-radius: 20px;
+  background-color: #f1f3f2;
+  background-clip: padding-box;
+  padding: 15px 15px 19px 16px;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: -2px;
+    bottom: -2px;
+    left: -2px;
+    right: -2px;
+    background: linear-gradient(
+        230deg,
+        #febdabbd,
+        #f3a9f8a8,
+        #e0d8f0,
+        #eaf7fe,
+        #eaf7fe
+      ),
+      linear-gradient(-130deg, #febdabbd, #f3a9f8a8, #e0d8f0, #eaf7fe, #eaf7fe);
+    z-index: -1;
+    border-radius: 20px;
+  }
+
+  &__header {
+    margin-bottom: 6px;
+  }
+
+  &__content {
+    font-family: "Roboto", sans-serif;
+    font-weight: 300;
+    font-size: 15px;
+    line-height: 120%;
+    color: $Gray;
+  }
+}
+
+.header-testimonial {
+  display: flex;
+
+  &__avatar {
+    margin-right: 10px;
+  }
+
+  &__data {
+    font-family: "Roboto", sans-serif;
+    line-height: 120%;
+  }
+
+  &__name {
+    font-weight: 400;
+    font-size: 16px;
+    color: $Black;
+  }
+
+  &__location {
+    font-weight: 300;
+    font-size: 15px;
+    color: #bdbdbd;
+  }
+}
+// Testimonials styles end
 
 /* Page styles end */
 
