@@ -176,6 +176,10 @@ body {
   &__pets {
     padding: 90px 0 100px;
   }
+
+  &__pick-and-feed-a-friend {
+    padding: 69px 0 100px;
+  }
 }
 
 // Watch your favourite animal online styles start
@@ -355,6 +359,7 @@ body {
       transition: all 0.8s ease 0s;
 
       &:hover {
+        cursor: pointer;
         transform: scale(1.1);
       }
     }
@@ -452,6 +457,188 @@ body {
   // margin: 0 70px;
 }
 // Pets styles end
+
+// Pick and feed a friend styles start
+.charity {
+  background: linear-gradient(
+      315.75deg,
+      rgba(254, 210, 144, 0.7) 30.06%,
+      #febdab 100.95%,
+      rgba(254, 210, 144, 0.7) 106.36%
+    ),
+    linear-gradient(
+      315.75deg,
+      rgba(254, 189, 171, 0.74) 30.06%,
+      rgba(243, 169, 248, 0.66) 50.74%,
+      #e0d8f0 80.49%,
+      #eaf7fe 127.9%,
+      #eaf7fe 149.54%
+    ),
+    linear-gradient(
+      315.75deg,
+      rgba(254, 189, 171, 0.74) 30.06%,
+      rgba(243, 169, 248, 0.66) 50.74%,
+      #e0d8f0 80.49%,
+      #eaf7fe 127.9%,
+      #eaf7fe 149.54%
+    );
+  opacity: 0.9;
+
+  &__body {
+    padding: 41px 0 59px;
+    background-color: $Light_purple;
+    backdrop-filter: blur(2px);
+    border-radius: 20px;
+    text-align: center;
+  }
+
+  &__top {
+    margin-bottom: 60px;
+  }
+}
+
+.top-charity {
+  font-family: "Roboto", sans-serif;
+
+  > * {
+    &:first-child {
+      text-align: center;
+    }
+  }
+
+  text-align: left;
+
+  &__title {
+    font-weight: 400;
+    font-size: 48px;
+    line-height: 120%;
+    color: $Light_orange;
+    margin-bottom: 30px;
+    margin-top: 0;
+  }
+
+  &__paragraphs {
+    > * {
+      margin-top: 0;
+    }
+
+    padding-left: 99px;
+  }
+
+  &__joy {
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 120%;
+    color: $Black_blue;
+    margin-bottom: 40px;
+  }
+
+  &__covid {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 130%;
+    color: $Black_blue;
+    margin-bottom: 10px;
+  }
+
+  &__support {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 130%;
+    color: $Black_blue;
+    margin-bottom: 0;
+  }
+
+  &__emergency {
+    border-bottom: 1px solid $Light_orange;
+  }
+}
+.bottom-charity {
+  text-align: center;
+
+  &__title {
+    margin-top: 0;
+    margin-bottom: 40px;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 130%;
+    color: $Black_blue;
+  }
+}
+
+.cards-charity {
+  display: flex;
+  max-width: 764px;
+  justify-content: space-between;
+  margin: 0 auto 60px;
+
+  > * {
+    &:nth-child(even) {
+      > * {
+        &:first-child {
+          position: absolute;
+          top: 50%;
+          left: 0;
+          transform: translateY(-50%);
+        }
+      }
+    }
+  }
+
+  > * {
+    &:nth-last-child(2) {
+      > * {
+        &:first-child {
+          top: 47%;
+        }
+      }
+    }
+  }
+
+  &__column {
+    flex: 0 1 168px;
+    height: 100%;
+  }
+
+  &__separator {
+    position: relative;
+    flex: 0 1 69px;
+    max-height: 168px;
+  }
+
+  &__item {
+    text-align: left;
+  }
+
+  &__img {
+    position: relative;
+    box-sizing: border-box;
+    width: 168px;
+    height: 168px;
+    background-color: $White;
+    border-radius: 5px;
+    border: 1px solid $Light_orange;
+    margin-bottom: 30px;
+
+    &_pic {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  &__text {
+    margin: 0;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 140%;
+    color: $Black_blue;
+  }
+}
+// Pick and feed a friend styles end
 
 /* Page styles end */
 
