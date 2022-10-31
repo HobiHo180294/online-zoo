@@ -1,2 +1,1 @@
-# hobiho180294-JSFE2022Q3
-Private repository for @hobiho180294
+Online-zoo is a platform that contains information about animals from various zoos with webcams.
