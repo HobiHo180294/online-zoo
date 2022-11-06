@@ -98,6 +98,18 @@ body {
 .page {
   flex: 1 1 auto;
 }
+
+/* Watch your favourite animal online styles start */
+.intro {
+  &__container {
+    box-sizing: content-box;
+    max-width: 100%;
+    min-height: 390px;
+  }
+}
+
+/* Watch your favourite animal online styles end */
+
 /* Page styles end */
 
 /* Footer styles start */
