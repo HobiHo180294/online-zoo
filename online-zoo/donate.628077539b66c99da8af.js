@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunk=self.webpackChunk||[]).push([[697],{4353:()=>{eval("\n\n//# sourceURL=webpack:///./pages/donate/script.mjs?")}},e=>{var s=s=>e(e.s=s);e.O(0,[202],(()=>(s(1202),s(4353))));e.O()}]);
