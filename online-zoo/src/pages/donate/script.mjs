@@ -1,22 +1,21 @@
 import "@donate/style.scss";
+import {
+  ibg,
+  addActiveLink,
+  removeActiveLink,
+  inputNumbersLimit,
+} from "@js-modules/_functions.mjs";
 
 document.addEventListener("DOMContentLoaded", () => {
+  ibg();
+
   const footerLinks = document.querySelectorAll(".menu-footer__link");
-  [].forEach.call(footerLinks, (link) => {
-    if (link.classList.contains("_active-link")) {
-      link.classList.remove("_active-link");
-    }
-  });
+  const headerLinks = document.querySelectorAll(".menu-header__link");
+  const inputNumbers = document.querySelectorAll("input[type=number]");
+
+  removeActiveLink(footerLinks);
+  removeActiveLink(headerLinks);
+  inputNumbersLimit(inputNumbers);
+
+  addActiveLink(headerLinks);
 });
-
-function ibg() {
-  let ibg = document.querySelectorAll("._ibg");
-  for (var i = 0; i < ibg.length; i++) {
-    if (ibg[i].querySelector("img")) {
-      ibg[i].style.backgroundImage =
-        "url(" + ibg[i].querySelector("img").getAttribute("src") + ")";
-    }
-  }
-}
-
-ibg();

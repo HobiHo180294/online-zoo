@@ -40,6 +40,28 @@ $blocks: "header", "footer";
   }
 }
 
+%mr-58 {
+  margin-right: 58px;
+}
+
+%mr-73 {
+  margin-right: 73px;
+}
+
+%mr-88 {
+  margin-right: 88px;
+}
+
+%without-counters {
+  &::-webkit-outer-spin-button,
+  &::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  -moz-appearance: textfield;
+}
+
 /* Header + menu styles start */
 
 .header {
