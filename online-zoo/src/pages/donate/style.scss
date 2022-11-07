@@ -153,7 +153,7 @@ body {
     );
 
   &__desc {
-    margin-bottom: 40px;
+    margin-bottom: 46px;
   }
 }
 
@@ -162,7 +162,7 @@ body {
   color: $White;
 
   &__title {
-    margin: 0 0 10px;
+    margin: 0 0 8px;
     font-weight: 400;
     font-size: 36px;
     line-height: 130%;
@@ -198,11 +198,12 @@ body {
 
   &__top {
     font-family: "Roboto", sans-serif;
-    margin-bottom: 107px;
+    margin-bottom: 60px;
   }
 
   &__title {
     margin: 0 0 20px;
+    padding-right: 18px;
     font-weight: 400;
     font-size: 48px;
     line-height: 120%;
@@ -218,7 +219,8 @@ body {
   }
 
   &__count {
-    margin: 0 auto 48.53px;
+    margin: 0 auto -8px;
+    padding-right: 20px;
   }
 
   &__amount {
@@ -233,12 +235,16 @@ body {
     line-height: 140%;
     color: $Black_blue;
   }
+
+  &__form {
+    margin-bottom: 28px;
+  }
 }
 
 .count {
   display: flex;
   align-items: center;
-  max-width: 516.49px;
+  max-width: 532.49px;
 
   &__column {
     &:first-child {
@@ -280,9 +286,9 @@ body {
     &::after {
       content: "";
       position: absolute;
-      bottom: 8px;
-      left: 0;
-      height: 14px;
+      top: -15px;
+      left: 8px;
+      height: 18px;
       width: 2px;
       background-color: $Black_blue;
       border-radius: 3px;
@@ -305,6 +311,7 @@ body {
 .amount {
   &__title {
     margin: 0 0 17px;
+    padding-left: 3px;
     font-family: "Roboto";
     font-weight: 400;
     font-size: 16px;
@@ -331,7 +338,7 @@ body {
     position: absolute;
     top: 50%;
     left: 50%;
-    width: 915px;
+    width: 914px;
     height: 2px;
     transform: translate(-50%, -50%);
     background-color: #72828e;
@@ -344,14 +351,13 @@ body {
     width: 915px;
     transform: translate(-50%, -50%);
     display: flex;
-    margin-left: -20px;
+    margin-left: -15px;
 
     > * {
       &:not(:last-child) {
-        margin-right: 102px;
+        margin-right: 100px;
       }
     }
-    // justify-content: space-between;
   }
 
   &__dot {
@@ -426,19 +432,33 @@ body {
     line-height: 140%;
     text-transform: uppercase;
     color: $Black_blue;
+    transition: all 0.3s ease 0s;
+    margin-left: -1px;
+
+    &:nth-child(3) {
+      margin-left: -4px;
+    }
+
+    &:nth-child(6) {
+      margin-left: -4px;
+    }
 
     &::before {
       content: url("../../assets/images/donate/icons/dollar.svg");
       display: inline-block;
-      padding-right: 1px;
+    }
+
+    &._active-sum {
+      transition: all 0.3s ease 0s;
+      @extend %active-sum;
+
+      &::before {
+        content: url("../../assets/images/donate/icons/orange-dollar.svg");
+      }
     }
   }
 }
-.inteface {
-  &__form {
-    margin-bottom: 30.02px;
-  }
-}
+
 .form {
   &__group {
     border: none;
@@ -487,25 +507,27 @@ body {
     &_dollar {
       position: absolute;
       display: inline-block;
-      top: 50%;
-      right: 17px;
-      transform: translateY(-50%);
+      top: 17px;
+      right: 13px;
     }
   }
 
   &__payment {
+    margin-left: -18px;
+
     > * {
       &:not(:last-child) {
         margin-right: 50px;
       }
     }
 
-    margin-bottom: 34px;
+    margin-bottom: 29px;
   }
 
   &__btn {
     cursor: pointer;
     border: none;
+    margin-left: 5px;
   }
 }
 .payment {
@@ -540,11 +562,10 @@ body {
     &::before {
       content: "";
       position: absolute;
-      left: 0px;
-      top: 50%;
-      width: 16px;
-      height: 16px;
-      transform: translateY(-50%);
+      top: 0;
+      left: 0;
+      width: 14px;
+      height: 14px;
       border: 1px solid $Light_orange;
       background: none;
       border-radius: 100%;
@@ -554,10 +575,10 @@ body {
       content: "";
       position: absolute;
       transition: all 0.2s ease;
-      left: 0px;
-      top: 50%;
-      width: 16px;
-      height: 16px;
+      top: 0;
+      left: 0;
+      width: 14px;
+      height: 14px;
       transform: translateY(-50%);
       border-radius: 100%;
       background-color: $Green;
@@ -796,7 +817,7 @@ body {
   }
   40% {
     transform: scale(1);
-    opacity: 0.2;
+    opacity: 1;
   }
   100% {
     animation-timing-function: ease-in-out;
@@ -812,7 +833,7 @@ body {
   }
   40% {
     transform: scale(0.6);
-    opacity: 0.2;
+    opacity: 1;
   }
   100% {
     animation-timing-function: ease-in-out;
