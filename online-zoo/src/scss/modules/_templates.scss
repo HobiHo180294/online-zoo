@@ -1,3 +1,6 @@
+// Variables
+$blocks: "header", "footer";
+
 // Functions
 @import "@scss-modules/functions";
 
@@ -36,3 +39,134 @@
     object-fit: cover;
   }
 }
+
+%active-sum {
+  color: $Light_orange;
+}
+
+%mr-58 {
+  margin-right: 58px;
+}
+
+%mr-73 {
+  margin-right: 73px;
+}
+
+%mr-88 {
+  margin-right: 88px;
+}
+
+%without-counters {
+  &::-webkit-outer-spin-button,
+  &::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  -moz-appearance: textfield;
+}
+
+/* Header + menu styles start */
+
+.header {
+  padding: 14px 0;
+  max-height: 80px;
+  background-color: $Black;
+
+  &__body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    font-family: "Roboto", sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 140%;
+    color: $White;
+  }
+
+  &__menu {
+    margin-right: 438px;
+  }
+
+  &__copyright {
+    transition: all 0.5s ease 0s;
+
+    &:hover {
+      color: $Light_orange;
+    }
+  }
+}
+
+.logo {
+  position: relative;
+  display: inline-block;
+  padding: 3.55px 4.75px;
+  margin-right: 62px;
+  border: 1px solid $White;
+  border-radius: 2px;
+  cursor: pointer;
+
+  &__text {
+    margin: 0;
+    font-weight: 400;
+    font-size: 19.0145px;
+    line-height: 120%;
+    text-align: center;
+  }
+
+  &__icon {
+    position: absolute;
+    bottom: 9px;
+    left: 10px;
+  }
+}
+
+@each $block in $blocks {
+  .menu-#{$block} {
+    accent-color: auto;
+    &__list {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      margin: 0;
+      padding: 0;
+      list-style-type: none;
+    }
+
+    &__item {
+      &%active-link {
+        background: linear-gradient(
+          113.96deg,
+          $Orang 1.49%,
+          $Light_orange 101.44%
+        );
+
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+
+      &:not(:last-child) {
+        margin-right: 58px;
+      }
+
+      &:not(%active-link) {
+        transition: all 0.5s ease 0s;
+
+        &:hover {
+          color: $Light_orange;
+        }
+      }
+    }
+  }
+}
+
+%active-link {
+  background: linear-gradient(113.96deg, $Orang 1.49%, $Light_orange 101.44%);
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+/* Header + menu styles end */
