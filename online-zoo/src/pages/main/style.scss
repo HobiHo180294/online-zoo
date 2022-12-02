@@ -73,7 +73,6 @@ body {
 ._ibg {
   @extend %ibg;
 }
-
 /* Presets and common styles end*/
 
 /* Header styles start */
@@ -969,5 +968,212 @@ body {
 /* Footer styles end */
 
 /* Media queries start */
+
+@media only screen and (max-width: 1000px) {
+  .header {
+    position: relative;
+    z-index: 3;
+    &__body {
+      max-width: 960px;
+      justify-content: start;
+      margin: 0 auto;
+    }
+
+    &__logo {
+      margin-right: 63px;
+    }
+
+    &__menu {
+      margin-right: 0;
+    }
+
+    &__copyright {
+      margin-left: auto;
+    }
+  }
+
+  .page {
+    &__the-backstage {
+      padding: 100px 0 71px;
+    }
+
+    &__pets {
+      padding: 71px 0 140px;
+    }
+
+    &__pick-and-feed-a-friend {
+      padding: 30px 0 50px;
+    }
+
+    &__testimonials {
+      padding: 100px 0 140px;
+    }
+  }
+
+  .intro {
+    min-height: 504px;
+
+    &__container {
+      position: relative;
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: -15px;
+        left: 500px;
+        width: 367px;
+        height: 367px;
+        background: linear-gradient(113.96deg, #f9804b 1.49%, #fe9013 101.44%);
+        border-radius: 50%;
+      }
+    }
+
+    &__body {
+      padding-top: 42.8px;
+    }
+  }
+
+  .title {
+    font-size: 85px;
+  }
+
+  .backstage {
+    &::before {
+      display: none;
+    }
+
+    &__body {
+      max-width: 940px;
+      margin: 0 auto;
+    }
+
+    &__img {
+      &_pic {
+        width: 455px;
+        height: 408px;
+      }
+    }
+
+    &__column {
+      margin-left: auto;
+    }
+  }
+
+  .column-backstage {
+    max-width: 454px;
+  }
+
+  .pets {
+    &::after {
+      content: url("../../assets/images/main/decorations/strelitzia-1000px.png");
+      bottom: -5px;
+    }
+
+    &::before {
+      content: url("../../assets/images/main/decorations/palm_foto-1000px.png");
+      bottom: -5px;
+    }
+
+    &__cards {
+      column-gap: 0;
+    }
+
+    &__slider {
+      margin-bottom: 65px;
+    }
+  }
+
+  .card-pets {
+    max-width: 294px;
+    padding: 8px 14px 14px 16px;
+
+    &__img {
+      position: relative;
+      max-width: 294px;
+      max-height: 294px;
+
+      &_pic {
+        width: 294px;
+        height: 294px;
+      }
+    }
+  }
+
+  .arrows-wrapper {
+    max-width: 1000px;
+    height: 120px;
+  }
+
+  .arrows-flex {
+    max-width: 295px;
+    margin: 0 auto;
+  }
+
+  .charity {
+    &__body {
+      padding: 30px 0 50px;
+    }
+
+    &__top {
+      margin-bottom: 40px;
+    }
+  }
+
+  .top-charity {
+    &__paragraphs {
+      max-width: 843px;
+      margin: 0 auto;
+      padding-left: 0;
+    }
+
+    &__joy {
+      margin-bottom: 20px;
+    }
+
+    &__support {
+      > br {
+        display: none;
+      }
+    }
+  }
+
+  .testimonials {
+    &::before {
+      content: url("../../assets/images/main/decorations/leav_foto-1000px.png");
+      bottom: -50px;
+      right: -105px;
+    }
+
+    &__title {
+      margin-bottom: 30px;
+    }
+
+    &__examples {
+      justify-content: start;
+    }
+
+    &__progress-bg {
+      width: 390px;
+    }
+  }
+
+  .examples-testimonials {
+    &__column {
+      flex: 0 1 293px;
+
+      &:nth-child(4) {
+        display: none;
+      }
+
+      &:not(:nth-last-child(-n + 2)) {
+        margin-right: 30px;
+      }
+    }
+  }
+
+  .item-testimonial {
+    padding: 15px 18px 19px 16px;
+  }
+}
 
 /* Media queries end */
