@@ -1,0 +1,1241 @@
+/* Libraries start */
+@import "~normalize.css";
+/* Libraries end */
+
+// Modules
+
+/* Fonts start */
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap");
+/* Fonts end */
+
+// Palette
+@import "@scss-modules/palette";
+
+// Templates
+@import "@scss-modules/templates";
+
+// Mixins
+@import "@scss-modules/mixins";
+
+// Functions
+@import "@scss-modules/functions";
+
+// Buttons
+@import "@scss-modules/buttons";
+
+/* Presets and common styles start*/
+html,
+body {
+  height: 100%;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+* {
+  box-sizing: inherit;
+
+  &::before {
+    box-sizing: inherit;
+  }
+
+  &::after {
+    box-sizing: inherit;
+  }
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+}
+
+body {
+  font-family: "font", sans-serif;
+}
+
+.wrapper {
+  @extend %wrapper;
+}
+
+._l-container {
+  @extend %l-container;
+}
+
+._m-container {
+  @extend %m-container;
+}
+
+._ibg {
+  @extend %ibg;
+}
+/* Presets and common styles end*/
+
+/* CSS variables */
+:root {
+  --rightPositionOfBeforeElement: 0;
+}
+
+/* Header styles start */
+.header {
+  @extend .header;
+}
+
+.logo {
+  @extend .logo;
+}
+
+._active-link {
+  @extend %active-link;
+}
+
+.menu-header {
+  @extend .menu-header;
+}
+/* Header styles end */
+
+/* Page styles start */
+.page {
+  flex: 1 1 auto;
+
+  &__the-backstage {
+    padding: 140px 0 90px;
+  }
+
+  &__pets {
+    padding: 90px 0 100px;
+  }
+
+  &__pick-and-feed-a-friend {
+    padding: 69px 0 100px;
+  }
+
+  &__testimonials {
+    padding: 140px 0 180px;
+  }
+}
+
+// Watch your favourite animal online styles start
+.intro {
+  background: url("../../assets/images/css-backgrounds/main/Giant-Panda_cut.png")
+    no-repeat center / cover;
+  min-height: 700px;
+  position: relative;
+
+  &__container {
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 12px;
+      left: 600px;
+      width: 465px;
+      height: 465px;
+      background: linear-gradient(113.96deg, #f9804b 1.49%, #fe9013 101.44%);
+      border-radius: 50%;
+    }
+  }
+
+  &__body {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: auto;
+    max-width: 500px;
+    padding-top: 86px;
+    z-index: 1;
+  }
+
+  &__title {
+    margin-bottom: 60px;
+  }
+}
+
+.title {
+  margin-top: 0;
+  font-family: "Roboto";
+  font-weight: 700;
+  font-size: 106.496px;
+  line-height: 75%;
+  text-transform: uppercase;
+  color: $White;
+  text-align: center;
+
+  &__mark {
+    background: none;
+    color: $Yellow;
+  }
+}
+// Watch your favourite animal online styles end
+
+//  The Backstage styles start
+.backstage {
+  position: relative;
+
+  &::before {
+    content: url("../../assets/images/main/decorations/flower_foto.png");
+    position: absolute;
+    top: 10px;
+    right: var(--rightPositionOfBeforeElement);
+    // right: 0;
+  }
+
+  &__body {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  &__img {
+    margin-right: 20px;
+  }
+}
+
+.column-backstage {
+  max-width: 465px;
+}
+
+.top-column-backstage {
+  margin-bottom: 54px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  color: $Black_blue;
+
+  &__title {
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 48px;
+    font-weight: inherit;
+    line-height: 120%;
+
+    &_text {
+      font-size: 16px;
+      line-height: 130%;
+      margin: 0;
+    }
+  }
+}
+
+.bottom-column-backstage {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  color: $Black_blue;
+
+  &__subtitle {
+    margin-top: 0;
+    margin-bottom: 34px;
+    font-weight: inherit;
+    font-size: 24px;
+    line-height: 120%;
+  }
+
+  &__explain {
+    margin: 0;
+    font-size: 16px;
+    line-height: 140%;
+  }
+}
+//  The Backstage styles end
+
+// Pets styles start
+.pets {
+  position: relative;
+
+  &::before {
+    content: url("../../assets/images/main/decorations/palm_foto.png");
+    position: absolute;
+    bottom: 0;
+    left: 0;
+  }
+
+  &::after {
+    content: url("../../assets/images/main/decorations/strelitzia.png");
+    position: absolute;
+    bottom: 0;
+    right: 0;
+  }
+
+  &__container {
+    text-align: center;
+  }
+
+  &__slider {
+    position: relative;
+    margin-bottom: 80px;
+  }
+
+  &__cards {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    column-gap: 30px;
+    row-gap: 20px;
+    padding: 0;
+  }
+}
+
+.card-pets {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  grid-column: span 2;
+
+  &:nth-child(5) {
+    display: none;
+  }
+
+  &__img {
+    position: relative;
+    z-index: 1;
+    max-height: 366px;
+    overflow: hidden;
+    border-top: 2px solid $Light_orange;
+    border-left: 2px solid $Light_orange;
+    border-right: 2px solid $Light_orange;
+    border-radius: 5px 5px 0 0;
+
+    &_pic {
+      transition: all 0.8s ease 0s;
+
+      &:hover {
+        cursor: pointer;
+        transform: scale(1.1);
+        opacity: 0.8;
+      }
+    }
+  }
+}
+
+.desc-pets {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 8px 10px 16px;
+  text-align: left;
+  overflow: hidden;
+  background-color: $Light_gray;
+  border-bottom: 2px solid $Light_orange;
+  border-left: 2px solid $Light_orange;
+  border-right: 2px solid $Light_orange;
+  border-radius: 0 0 5px 5px;
+  transform: translateY(-120%);
+  opacity: 0;
+  transition: all 0.8s ease 0s;
+  z-index: 0;
+
+  &._active {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+
+  &__text {
+    font-family: "Roboto", sans-serif;
+    color: $Black;
+  }
+
+  &__title {
+    margin: 0;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 140%;
+    text-transform: uppercase;
+  }
+
+  &__environment {
+    margin: 0;
+    font-weight: 300;
+    font-size: 15px;
+    line-height: 120%;
+  }
+}
+
+.slide-arrow {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 62px;
+  height: 62px;
+  background-image: linear-gradient(
+    113.96deg,
+    $Orang 1.49%,
+    $Light_orange 101.44%
+  );
+  border-radius: 50%;
+  z-index: 1;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-image: linear-gradient(0deg, $Green 100%, $Green 100%);
+    z-index: -1;
+    border-radius: 50%;
+    transition: opacity 0.3s linear;
+    opacity: 0;
+  }
+
+  &:hover::before {
+    cursor: pointer;
+    opacity: 1;
+  }
+
+  &__ico {
+    cursor: pointer;
+  }
+}
+
+.arrows-wrapper {
+  position: absolute;
+  width: 1322px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.arrows-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  // margin: 0 70px;
+}
+// Pets styles end
+
+// Pick and feed a friend styles start
+.charity {
+  background: linear-gradient(
+      315.75deg,
+      rgba(254, 210, 144, 0.7) 30.06%,
+      #febdab 100.95%,
+      rgba(254, 210, 144, 0.7) 106.36%
+    ),
+    linear-gradient(
+      315.75deg,
+      rgba(254, 189, 171, 0.74) 30.06%,
+      rgba(243, 169, 248, 0.66) 50.74%,
+      #e0d8f0 80.49%,
+      #eaf7fe 127.9%,
+      #eaf7fe 149.54%
+    ),
+    linear-gradient(
+      315.75deg,
+      rgba(254, 189, 171, 0.74) 30.06%,
+      rgba(243, 169, 248, 0.66) 50.74%,
+      #e0d8f0 80.49%,
+      #eaf7fe 127.9%,
+      #eaf7fe 149.54%
+    );
+  opacity: 0.9;
+
+  &__body {
+    padding: 41px 0 59px;
+    background-color: $Light_purple;
+    backdrop-filter: blur(2px);
+    border-radius: 20px;
+    text-align: center;
+  }
+
+  &__top {
+    margin-bottom: 60px;
+  }
+}
+
+.top-charity {
+  font-family: "Roboto", sans-serif;
+
+  > * {
+    &:first-child {
+      text-align: center;
+    }
+  }
+
+  text-align: left;
+
+  &__title {
+    font-weight: 400;
+    font-size: 48px;
+    line-height: 120%;
+    color: $Light_orange;
+    margin-bottom: 30px;
+    margin-top: 0;
+  }
+
+  &__paragraphs {
+    > * {
+      margin-top: 0;
+    }
+
+    padding-left: 99px;
+  }
+
+  &__joy {
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 120%;
+    color: $Black_blue;
+    margin-bottom: 40px;
+  }
+
+  &__covid {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 130%;
+    color: $Black_blue;
+    margin-bottom: 10px;
+  }
+
+  &__support {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 130%;
+    color: $Black_blue;
+    margin-bottom: 0;
+  }
+
+  &__emergency {
+    border-bottom: 1px solid $Light_orange;
+  }
+}
+.bottom-charity {
+  text-align: center;
+
+  &__title {
+    margin-top: 0;
+    margin-bottom: 40px;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 130%;
+    color: $Black_blue;
+  }
+}
+
+.cards-charity {
+  display: flex;
+  max-width: 764px;
+  justify-content: space-between;
+  margin: 0 auto 60px;
+
+  > * {
+    &:nth-child(even) {
+      > * {
+        &:first-child {
+          position: absolute;
+          top: 50%;
+          left: 0;
+          transform: translateY(-50%);
+        }
+      }
+    }
+  }
+
+  > * {
+    &:nth-last-child(2) {
+      > * {
+        &:first-child {
+          top: 47%;
+        }
+      }
+    }
+  }
+
+  &__column {
+    flex: 0 1 168px;
+    height: 100%;
+  }
+
+  &__separator {
+    position: relative;
+    flex: 0 1 69px;
+    max-height: 168px;
+  }
+
+  &__item {
+    text-align: left;
+  }
+
+  &__img {
+    position: relative;
+    box-sizing: border-box;
+    width: 168px;
+    height: 168px;
+    background-color: $White;
+    border-radius: 5px;
+    border: 1px solid $Light_orange;
+    margin-bottom: 30px;
+
+    &_pic {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  &__text {
+    margin: 0;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 140%;
+    color: $Black_blue;
+  }
+}
+// Pick and feed a friend styles end
+
+// Testimonials styles start
+.testimonials {
+  position: relative;
+
+  &::before {
+    content: url("../../assets/images/main/decorations/leav_foto.png");
+    bottom: -20px;
+    right: -55px;
+    position: absolute;
+    width: 300.92px;
+    height: 295.45px;
+  }
+
+  &__body {
+    > * {
+      &:first-child {
+        text-align: center;
+      }
+    }
+  }
+
+  &__title {
+    margin-top: 0;
+    margin-bottom: 45px;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 130%;
+    color: $Black_blue;
+  }
+
+  &__examples {
+    text-align: left;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 21px;
+  }
+
+  &__progress {
+    width: 599px;
+    height: 8px;
+    border-radius: 5px;
+  }
+
+  &__progress-bg {
+    position: relative;
+    width: 599px;
+    height: 8px;
+    box-sizing: border-box;
+    border: 0.5px solid transparent;
+    background-color: #f5f7f6;
+    border-radius: 5px;
+    margin: 0 auto 31px;
+    background-clip: padding-box;
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: -0.5px;
+      bottom: -0.5px;
+      left: -0.5px;
+      right: -0.5px;
+      background: linear-gradient(
+          190deg,
+          #febdabbd,
+          #f3a9f8a8,
+          #e0d8f0,
+          #eaf7fe,
+          #eaf7fe
+        ),
+        linear-gradient(
+          -130deg,
+          #febdabbd,
+          #f3a9f8a8,
+          #e0d8f0,
+          #eaf7fe,
+          #eaf7fe
+        );
+      z-index: -1;
+      border-radius: 5px;
+    }
+  }
+
+  &__progress-line {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 19.2%;
+    background-color: #fe9013;
+    border-radius: 5px;
+  }
+}
+
+.examples-testimonials {
+  &__column {
+    flex: 0 1 268px;
+  }
+}
+
+.item-testimonial {
+  position: relative;
+  border: 2px solid transparent;
+  border-radius: 20px;
+  background-color: #f1f3f2;
+  background-clip: padding-box;
+  padding: 15px 15px 19px 16px;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: -2px;
+    bottom: -2px;
+    left: -2px;
+    right: -2px;
+    background: linear-gradient(
+        230deg,
+        #febdabbd,
+        #f3a9f8a8,
+        #e0d8f0,
+        #eaf7fe,
+        #eaf7fe
+      ),
+      linear-gradient(-130deg, #febdabbd, #f3a9f8a8, #e0d8f0, #eaf7fe, #eaf7fe);
+    z-index: -1;
+    border-radius: 20px;
+  }
+
+  &__header {
+    margin-bottom: 6px;
+  }
+
+  &__content {
+    font-family: "Roboto", sans-serif;
+    font-weight: 300;
+    font-size: 15px;
+    line-height: 120%;
+    color: $Gray;
+  }
+}
+
+.header-testimonial {
+  display: flex;
+
+  &__avatar {
+    margin-right: 10px;
+  }
+
+  &__data {
+    font-family: "Roboto", sans-serif;
+    line-height: 120%;
+  }
+
+  &__name {
+    font-weight: 400;
+    font-size: 16px;
+    color: $Black;
+  }
+
+  &__location {
+    font-weight: 300;
+    font-size: 15px;
+    color: #bdbdbd;
+  }
+}
+// Testimonials styles end
+
+/* Page styles end */
+
+/* Footer styles start */
+.footer {
+  position: relative;
+  z-index: 999;
+  background-color: #111115;
+  padding: 38px 0 50px;
+
+  &__body {
+    color: $White;
+  }
+
+  &__top {
+    margin-bottom: 36px;
+  }
+
+  &__btn {
+    margin-bottom: 47px;
+  }
+}
+
+.top-footer {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.subscribe-footer {
+  &__title {
+    margin-top: 0;
+    margin-bottom: 16px;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 120%;
+    color: $White;
+  }
+
+  &__group {
+    border: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 140%;
+  }
+
+  &__email {
+    position: relative;
+    display: inline-block;
+    width: 228px;
+    box-sizing: border-box;
+    padding: 10px 7px 10px 10px;
+    background: none;
+    border: 0.7px solid $Light_orange;
+    border-radius: 2px;
+    margin-right: 10px;
+    background-clip: padding-box;
+    color: #bdbdbd;
+    outline: none;
+
+    &::placeholder {
+      font-family: "Roboto", sans-serif;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 140%;
+      color: #bdbdbd;
+    }
+  }
+
+  &__submit {
+    position: relative;
+    z-index: 999;
+    cursor: pointer;
+    display: inline-block;
+    box-sizing: border-box;
+    background-color: $Light_gray;
+    border: 1px solid $Black_blue;
+    border-radius: 5px;
+    padding: 10px 39px;
+    color: $Black;
+    transition: all 0.3s ease 0s;
+
+    &:hover {
+      color: #4b9200;
+      border-color: #4b9200;
+    }
+  }
+}
+
+.bottom-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  &__menu {
+    margin-left: 114px;
+  }
+}
+
+.info-contact {
+  &__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    > * {
+      &:not(:last-child) {
+        margin-bottom: 14px;
+      }
+    }
+  }
+
+  &__item {
+    position: relative;
+    display: block;
+    padding-left: 38px;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 140%;
+    color: $White;
+    font-style: normal;
+    transition: all 0.3s ease 0s;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: -3px;
+      left: 0px;
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      background-color: rgba(196, 196, 196, 0.5);
+      transition: inherit;
+    }
+
+    &:hover {
+      color: #4b9200;
+
+      &::before {
+        background-color: #4b9200;
+      }
+    }
+  }
+
+  &__facebook {
+    position: relative;
+    display: inline-block;
+    &::after {
+      position: absolute;
+      top: 1px;
+      left: 9px;
+      content: url("../../assets/images/css-backgrounds/footer/facebook.svg");
+      width: 16px;
+      height: 14px;
+    }
+  }
+
+  &__twitter {
+    &::after {
+      position: absolute;
+      top: 1px;
+      left: 4px;
+      content: url("../../assets/images/css-backgrounds/footer/twitter.svg");
+      width: 16px;
+      height: 14px;
+    }
+  }
+
+  &__instagram {
+    &::after {
+      position: absolute;
+      top: 1px;
+      left: 5px;
+      content: url("../../assets/images/css-backgrounds/footer/instagram.svg");
+      width: 16px;
+      height: 14px;
+    }
+  }
+
+  &__youtube {
+    &::after {
+      position: absolute;
+      top: 0;
+      left: 4px;
+      content: url("../../assets/images/css-backgrounds/footer/youtube.svg");
+      width: 16px;
+      height: 14px;
+    }
+  }
+}
+
+.menu-footer {
+  @extend .menu-footer;
+
+  &__item {
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 140%;
+    color: #fff;
+  }
+}
+
+.copyright {
+  font-family: "Roboto", sans-serif;
+  font-weight: 100;
+  font-size: 16px;
+  line-height: 130%;
+
+  &__designed {
+    margin-bottom: 10px;
+  }
+}
+
+/* Footer styles end */
+
+/* Media queries start */
+
+@media only screen and (max-width: 1000px) {
+  .header {
+    position: relative;
+    z-index: 3;
+    &__body {
+      max-width: 960px;
+      justify-content: start;
+      margin: 0 auto;
+    }
+
+    &__logo {
+      margin-right: 63px;
+    }
+
+    &__menu {
+      margin-right: 0;
+    }
+
+    &__copyright {
+      margin-left: auto;
+    }
+  }
+
+  .page {
+    &__the-backstage {
+      padding: 108px 0 71px;
+    }
+
+    &__pets {
+      padding: 71px 0 140px;
+    }
+
+    &__pick-and-feed-a-friend {
+      padding: 30px 0 50px;
+    }
+
+    &__testimonials {
+      padding: 100px 0 140px;
+    }
+  }
+
+  .intro {
+    min-height: 504px;
+
+    &__container {
+      position: relative;
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: -10px;
+        left: 442px;
+        width: 367px;
+        height: 367px;
+        background: linear-gradient(113.96deg, #f9804b 1.49%, #fe9013 101.44%);
+        border-radius: 50%;
+      }
+    }
+
+    &__body {
+      padding-top: 42.8px;
+    }
+
+    &__title {
+      margin-bottom: 42px;
+    }
+  }
+
+  .title {
+    font-size: 85px;
+  }
+
+  .backstage {
+    &::before {
+      transition: 0.3s linear;
+    }
+
+    &__body {
+      max-width: 940px;
+      margin: 0 auto;
+    }
+
+    &__column {
+      margin-left: auto;
+      margin-top: -6px;
+    }
+  }
+
+  .column-backstage {
+    max-width: 454px;
+  }
+
+  .pets {
+    &::after {
+      content: url("../../assets/images/main/decorations/strelitzia-1000px.png");
+      bottom: -5px;
+    }
+
+    &::before {
+      content: url("../../assets/images/main/decorations/palm_foto-1000px.png");
+      bottom: -5px;
+    }
+
+    &__cards {
+      column-gap: 0;
+      row-gap: 68px;
+      margin-left: 7px;
+    }
+
+    &__card {
+      margin-left: -7px;
+    }
+
+    &__slider {
+      margin-bottom: 65px;
+    }
+
+    &__btn {
+      margin-left: -4px;
+    }
+  }
+
+  .card-pets {
+    width: 294px;
+    padding: 8px 14px 14px 16px;
+
+    &:nth-child(3) {
+      grid-row-start: 2;
+    }
+
+    &:nth-child(4) {
+      display: none;
+    }
+
+    &:nth-child(5) {
+      display: block;
+      grid-row-start: 2;
+      grid-column-end: 5;
+    }
+
+    &__img {
+      position: relative;
+      max-width: 100%;
+      max-height: 294px;
+
+      &_pic {
+        width: 100%;
+        height: 294px;
+      }
+    }
+  }
+
+  .arrows-wrapper {
+    max-width: 979px;
+    transform: translateY(-56%);
+  }
+
+  .arrows-flex {
+    max-width: 295px;
+    margin: 0 auto;
+  }
+
+  .charity {
+    &__body {
+      padding: 30px 0 50px;
+    }
+
+    &__top {
+      margin-bottom: 40px;
+    }
+  }
+
+  .top-charity {
+    &__title {
+      margin-bottom: 22px;
+    }
+
+    &__paragraphs {
+      max-width: 843px;
+      margin: 0 auto;
+      padding-left: 0;
+    }
+
+    &__joy {
+      margin-bottom: 20px;
+    }
+
+    &__support {
+      > br {
+        display: none;
+      }
+    }
+  }
+
+  .cards-charity {
+    margin: 0 auto 70px;
+  }
+
+  .testimonials {
+    &::before {
+      content: url("../../assets/images/main/decorations/leav_foto-1000px.png");
+      bottom: -50px;
+      right: -105px;
+    }
+
+    &__title {
+      margin-bottom: 30px;
+    }
+
+    &__examples {
+      justify-content: start;
+    }
+
+    &__progress-bg {
+      width: 406px;
+      margin: 0 auto 52px;
+    }
+  }
+
+  .examples-testimonials {
+    &__column {
+      flex: 0 1 293px;
+
+      &:nth-child(4) {
+        display: none;
+      }
+
+      &:not(:nth-last-child(-n + 2)) {
+        margin-right: 30px;
+      }
+    }
+  }
+
+  .item-testimonial {
+    padding: 15px 18px 19px 16px;
+    min-height: 352px;
+
+    &__header {
+      margin-top: -4px;
+    }
+  }
+
+  .header-samborska {
+    margin-top: -6px;
+    margin-left: -5px;
+    margin-bottom: 14px;
+  }
+
+  .top-footer {
+    max-width: 909px;
+  }
+
+  .bottom-footer {
+    &__menu {
+      margin-left: 91px;
+    }
+  }
+}
+
+/* Media queries end */
