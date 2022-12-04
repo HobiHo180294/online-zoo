@@ -75,6 +75,11 @@ body {
 }
 /* Presets and common styles end*/
 
+/* CSS variables */
+:root {
+  --rightPositionOfBeforeElement: 0;
+}
+
 /* Header styles start */
 .header {
   @extend .header;
@@ -177,7 +182,8 @@ body {
     content: url("../../assets/images/main/decorations/flower_foto.png");
     position: absolute;
     top: 10px;
-    right: 0;
+    right: var(--rightPositionOfBeforeElement);
+    // right: 0;
   }
 
   &__body {
@@ -278,6 +284,10 @@ body {
   display: flex;
   flex-direction: column;
   grid-column: span 2;
+
+  &:nth-child(5) {
+    display: none;
+  }
 
   &__img {
     position: relative;
@@ -994,7 +1004,7 @@ body {
 
   .page {
     &__the-backstage {
-      padding: 100px 0 71px;
+      padding: 108px 0 71px;
     }
 
     &__pets {
@@ -1019,8 +1029,8 @@ body {
       &::before {
         content: "";
         position: absolute;
-        top: -15px;
-        left: 500px;
+        top: -10px;
+        left: 442px;
         width: 367px;
         height: 367px;
         background: linear-gradient(113.96deg, #f9804b 1.49%, #fe9013 101.44%);
@@ -1031,6 +1041,10 @@ body {
     &__body {
       padding-top: 42.8px;
     }
+
+    &__title {
+      margin-bottom: 42px;
+    }
   }
 
   .title {
@@ -1039,7 +1053,7 @@ body {
 
   .backstage {
     &::before {
-      display: none;
+      transition: 0.3s linear;
     }
 
     &__body {
@@ -1047,15 +1061,9 @@ body {
       margin: 0 auto;
     }
 
-    &__img {
-      &_pic {
-        width: 455px;
-        height: 408px;
-      }
-    }
-
     &__column {
       margin-left: auto;
+      margin-top: -6px;
     }
   }
 
@@ -1076,32 +1084,56 @@ body {
 
     &__cards {
       column-gap: 0;
+      row-gap: 68px;
+      margin-left: 7px;
+    }
+
+    &__card {
+      margin-left: -7px;
     }
 
     &__slider {
       margin-bottom: 65px;
     }
+
+    &__btn {
+      margin-left: -4px;
+    }
   }
 
   .card-pets {
-    max-width: 294px;
+    width: 294px;
     padding: 8px 14px 14px 16px;
+
+    &:nth-child(3) {
+      grid-row-start: 2;
+    }
+
+    &:nth-child(4) {
+      display: none;
+    }
+
+    &:nth-child(5) {
+      display: block;
+      grid-row-start: 2;
+      grid-column-end: 5;
+    }
 
     &__img {
       position: relative;
-      max-width: 294px;
+      max-width: 100%;
       max-height: 294px;
 
       &_pic {
-        width: 294px;
+        width: 100%;
         height: 294px;
       }
     }
   }
 
   .arrows-wrapper {
-    max-width: 1000px;
-    height: 120px;
+    max-width: 979px;
+    transform: translateY(-56%);
   }
 
   .arrows-flex {
@@ -1120,6 +1152,10 @@ body {
   }
 
   .top-charity {
+    &__title {
+      margin-bottom: 22px;
+    }
+
     &__paragraphs {
       max-width: 843px;
       margin: 0 auto;
@@ -1135,6 +1171,10 @@ body {
         display: none;
       }
     }
+  }
+
+  .cards-charity {
+    margin: 0 auto 70px;
   }
 
   .testimonials {
@@ -1153,7 +1193,8 @@ body {
     }
 
     &__progress-bg {
-      width: 390px;
+      width: 406px;
+      margin: 0 auto 52px;
     }
   }
 
@@ -1173,6 +1214,27 @@ body {
 
   .item-testimonial {
     padding: 15px 18px 19px 16px;
+    min-height: 352px;
+
+    &__header {
+      margin-top: -4px;
+    }
+  }
+
+  .header-samborska {
+    margin-top: -6px;
+    margin-left: -5px;
+    margin-bottom: 14px;
+  }
+
+  .top-footer {
+    max-width: 909px;
+  }
+
+  .bottom-footer {
+    &__menu {
+      margin-left: 91px;
+    }
   }
 }
 

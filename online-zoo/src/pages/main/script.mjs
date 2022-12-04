@@ -4,6 +4,9 @@ const petImageWrapper = document.querySelectorAll(".card-pets__img");
 const petDescription = document.querySelectorAll(".desc-pets");
 
 const petsImages = document.querySelectorAll(".card-pets__img_pic");
+const petsCardsContainer = document.querySelector(".pets__cards");
+
+const topCharityCovidParagraph = document.querySelector(".top-charity__covid");
 
 petImageWrapper.forEach((element) =>
   element.addEventListener("mouseover", (e) => {
@@ -25,13 +28,15 @@ if (mediaQuery1000.matches) {
     ".item-testimonial__content"
   );
 
-  petsImages.forEach((pet, number) => {
-    if (number === 4)
-      pet.setAttribute(
-        "src",
-        "./assets/images/main/content/Pets/alligators.jpg"
-      );
-  });
+  const backstageSection = document.querySelector(".backstage");
+
+  const backstageTop = backstageSection.offsetTop;
+  const backstageBottom = backstageSection.offsetBottom;
+
+  petsCardsContainer.classList.remove("_m-container");
+
+  topCharityCovidParagraph.innerHTML =
+    "During a time when the COVID-19 epidemic is touching all of our lives, we’re proud and glad that people around <br /> the world find joy in PetStory.";
 
   testimonialItem.textContent += "animals.";
   testimonialPeopleNames.forEach((name, index) => {
@@ -39,7 +44,6 @@ if (mediaQuery1000.matches) {
   });
 
   testimonialsAvatars.forEach((avatar, index) => {
-    console.log(avatar);
     if (index === 1)
       avatar.setAttribute(
         "src",
@@ -60,7 +64,20 @@ if (mediaQuery1000.matches) {
       content.innerHTML =
         "&nbsp;My son delighted very much ljves to watch gouillas. Online zoo is one jf the ways to instill a love for animals.The best online zoo I’ve met. My son delighted very much ljves to watch gouillas. Online zoo is one jf the ways to instill a love for animals. The best online zoo I’ve met.<br />The best online zoo I’ve met. My son delighted very much ljves to watch gouillas. Online zoo is one jf the ways to instill a love for animals.The best online zoo I’ve met. My son delighted very much ljves to watch gouillas. Online zoo is one jf the ways to instill a love for animals.";
   });
-}
 
-// petImage.addEventListener("mouseover", (e) => {
-// });
+  window.addEventListener("scroll", () => {
+    if (window.scrollY >= backstageTop)
+      backstageSection.style.setProperty(
+        "--rightPositionOfBeforeElement",
+        "-204px"
+      );
+    else if (
+      window.scrollY >= backstageBottom ||
+      window.scrollY <= backstageTop
+    )
+      backstageSection.style.setProperty(
+        "--rightPositionOfBeforeElement",
+        "0px"
+      );
+  });
+}

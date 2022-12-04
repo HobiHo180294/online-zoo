@@ -51,13 +51,17 @@
           <div class="backstage__container _m-container">
             <div class="backstage__body">
               <div class="backstage__img">
-                <img
-                  class="backstage__img_pic"
+                <picture>
+                  <source
+                    srcset="
+                      ./assets/images/main/content/The-Backstage/bamboo-cap-1000px.jpg
+                    "
+                    media="(max-width: 1000px)"
+                  />
+                  <img class="backstage__img_pic"
                   src="./assets/images/main/content/The-Backstage/bamboo-cap.jpg"
-                  alt="The Backstage of the Wilderness World"
-                  width="609"
-                  height="403"
-                />
+                  alt="The Backstage of the Wilderness World"">
+                </picture>
               </div>
 
               <div class="backstage__column column-backstage">
@@ -212,6 +216,35 @@
                   <div class="card-pets__img">
                     <img
                       class="card-pets__img_pic"
+                      src="./assets/images/main/content/Pets/alligators.jpg"
+                      alt="Alligators"
+                      width="366"
+                      height="366"
+                    />
+                  </div>
+
+                  <div class="pets__desc desc-pets">
+                    <div class="desc-pets__text">
+                      <h5 class="desc-pets__title">Alligators</h5>
+                      <p class="desc-pets__environment">
+                        Native to Southeastern U. S.
+                      </p>
+                    </div>
+
+                    <div class="desc-pets__thumb">
+                      <img
+                        class="desc-pets__icon"
+                        src="./assets/images/main/icons/meet-fish_ico.svg"
+                        alt="Alligators"
+                      />
+                    </div>
+                  </div>
+                </article>
+
+                <article class="pets__card card-pets">
+                  <div class="card-pets__img">
+                    <img
+                      class="card-pets__img_pic"
                       src="./assets/images/main/content/Pets/cheetahs.jpg"
                       alt="cheetahs"
                       width="366"
@@ -284,7 +317,7 @@
               </div>
             </div>
 
-            <a href="#!" class="intro__btn orangeBtn">choose your favorite</a>
+            <a href="#!" class="pets__btn orangeBtn">choose your favorite</a>
           </div>
         </div>
         <!-- ? Pets end -->
@@ -437,7 +470,9 @@
 
                 <div class="examples-testimonials__column">
                   <article class="examples-testimonials__item item-testimonial">
-                    <div class="item-testimonial__header header-testimonial">
+                    <div
+                      class="item-testimonial__header header-testimonial header-samborska"
+                    >
                       <div class="header-testimonial__avatar">
                         <img
                           class="header-testimonial__avatar_pic"
